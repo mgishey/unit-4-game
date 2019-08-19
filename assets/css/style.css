@@ -4,9 +4,8 @@
 
 
 body {
-    background: url("../images/pattern2.jpg");
-    /*border: 2px;
-    border-color: black;*/
+    background: url("../images/pattern3.jpg");
+}
 
 .container {
     max-width: 960px;
@@ -15,7 +14,7 @@ body {
     }
 
 #title {
-    text-align: left;
+    text-align: center;
     background: coral;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 20px;
@@ -32,6 +31,7 @@ body {
 
 p {
     color: green;
+    margin-left: 5px;
 }
 
 h3 {
@@ -39,23 +39,36 @@ h3 {
 
 }
 
-.score {
+#comp-score {
+    height: 90px;
+    font-size: 20px;
     background: green;
     margin-left: 10px;
+    padding-left: 5px;
+    color: white;
 }
 
 #won-lost{
-    height: 900x;
+    height: 90px;
     background: cyan;
     margin-left: 0;
     text-align: center;
 }
 
-.stats{
-    margin:0;
-    padding: 0;
-    padding: 10px;
+#status{
+    margin: 0;
+    padding-top: 3px;
 }
+#wins{
+    margin:0;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+#losses{
+    margin: 0;
+}
+
 
 #gem-container{
     margin-top: 10px;
@@ -67,10 +80,18 @@ h3 {
     color: white;
     background: teal;
     margin-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
 }
 
 #user-score{
+    font-size: 20px;
     color: white;
+    background: teal;
+    height: 90px;
+    margin-left: 10px;
+    padding-left: 5px;
 }
 
 
