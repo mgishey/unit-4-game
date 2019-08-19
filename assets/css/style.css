@@ -3,22 +3,19 @@
 }
 
 
-html {
-    height: 100%;
-    border: 2px;
-    border-color: black
-}
-
-*/
-
 body {
     background: url("../images/pattern2.jpg");
     /*border: 2px;
     border-color: black;*/
-}
+
+.container {
+    max-width: 960px;
+    border: 2px;
+    border-color: black;
+    }
 
 #title {
-    text-align: center;
+    text-align: left;
     background: coral;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 20px;
@@ -26,7 +23,6 @@ body {
     line-height: 90px;
     color: #ffffff;
     margin-left: 10px;
-    margin-bottom: 0:
 }
 
 .rules {
