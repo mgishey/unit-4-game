@@ -61,7 +61,7 @@
         </div>
         <div class="col-md-2">
             <div id="won-lost">
-                <p id="status">You Win</p>
+                <p id="status"></p>
                 <p id="wins">Wins: 0</p>
                 <p id="losses">Losses: 0</p>
             </div>
@@ -70,44 +70,114 @@
 
 
     <div id="gem-container">
-        <img src="assets/images/blue-diamond.jpg">
-        <img src="assets/images/green-gem.jpg">
-        <img src="assets/images/heart-gem.jpg">
-        <img src="assets/images/purple-gem.jpg">
+        <img id="blue-gem" src="assets/images/blue-diamond.jpg">
+        <img id="green-gem" src="assets/images/green-gem.jpg">
+        <img id="heart-gem" src="assets/images/heart-gem.jpg">
+        <img id="purple-gem" src="assets/images/purple-gem.jpg">
     </div>
 
     <div class="row">
-        <div class="col-md-4">
-            <p id=total-score>Your total score is:</p>
+        <div class="col-md-3">
+            <p id="total-score">Your total score is:</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-3">
-                <p id="user-score">0</p>
+            <p id="user-score">0</p>
         </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script type="text/javascript">
 
-    </script>
+        $(document).ready(function () {
 
+            ///////////////////////
+            // Global Variables //
+            /////////////////////
+            var compScore = 0;
+            var blueVal = 0;
+            var greenVal = 0;
+            var heartVal = 0;
+            var purpleVal = 0;
+            var wonLoss = true;
+            var userScore = 0;
+            bc = 0;
+            gc = 0;
+            hc = 0;
+            pc = 0;
+
+            ////////////////
+            // Functions //
+            //////////////
+
+            // fucntion to randomly generate a computer score between 19 and 120
+            function genComputerScore() {
+                compScore = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+                console.log("CompScore: " + compScore);
+                $("#comp-score").text(compScore);
+            }
+
+            // function to randomly genterate gem values to start game
+
+            function gemValues() {
+                return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+            }
+
+
+            ///////////////////
+            // Main Process //
+            ///////////////// 
+            console.log("Value of wonLoss at start of game: " + wonLoss);
+            genComputerScore();
+
+            $("#blue-gem").on("click", function () {
+                blueVal = gemValues();
+                console.log("Blue Value " + blueVal);
+                userScore += blueVal;
+                $("#user-score").text(userScore);
+                console.log("userScore: " + userScore);
+
+            });
+            $("#green-gem").on("click", function () {
+                greenVal = gemValues();
+                console.log("Green Value " + greenVal);
+                userScore += greenVal;
+                $("#user-score").text(userScore);
+                console.log("userScore: " + userScore);
+                wonLoss = false;
+            });
+
+            $("#heart-gem").on("click", function () {
+                heartVal = gemValues();
+                console.log("Heart Value " + heartVal);
+                userScore += heartVal;
+                $("#user-score").text(userScore);
+                console.log("userScore: " + userScore);
+
+            });
+
+            $("#purple-gem").on("click", function () {
+                purpleVal = gemValues();
+                console.log("Purple Value " + purpleVal);
+                userScore += purpleVal;
+                $("#user-score").text(userScore);
+                console.log("userScore: " + userScore);
+            });
+
+            console.log("Value of userScore at start of game: " + userScore);
+
+
+        });
+
+
+
+
+
+
+
+    </script>
 
 </body>
 
